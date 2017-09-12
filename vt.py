@@ -39,10 +39,12 @@ else:
 	data3 = data2['scans']
 
 	# 키와 값을 분류하여 'detected' = True 인거 개수 세기!
+	n=0
 	count=0
 	for i,j in data3.items():
 		print('key : ' , i)
 		print('value :' , j)
+		n +=1
 		if j['detected'] == True :
 			count += 1
-			print(count)
+	print("총 %d 개의 엔진 중 %d 개가 악성이라 판단하였습니다." % (n,count))
