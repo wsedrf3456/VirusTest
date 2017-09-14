@@ -10,14 +10,11 @@ def hv():
 	f = open(filename, "rb")
 	dt = f.read()
 
-
 	# 받아온 파일에 대한 해시값 구하기
 	h = hashlib.md5()
 	h.update(dt)
 	hashvalue = h.hexdigest()
 	return hashvalue
-
-
 
 
 # 뒤에 차례대로 오는 인자들을 받아 virustotal~ URL 만들기
@@ -42,8 +39,8 @@ else:
 	n=0
 	count=0
 	for i,j in data3.items():
-		print('key : ' , i)
-		print('value :' , j)
+		print(('%d 번째 엔진 : ' % n) , i)
+		print('결과값 :' , j['detected'])
 		n +=1
 		if j['detected'] == True :
 			count += 1
